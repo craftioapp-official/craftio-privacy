@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Craftio — Privacy Policy / Zásady ochrany osobních údajů</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #f9f9f9; color: #222; line-height: 1.7; }
+    .container { max-width: 780px; margin: 0 auto; padding: 48px 24px; }
+    .header { text-align: center; margin-bottom: 48px; }
+    .logo { font-size: 28px; font-weight: 900; color: #D63B2F; letter-spacing: 2px; }
+    .subtitle { font-size: 14px; color: #888; margin-top: 6px; }
+    .lang-toggle { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; }
+    .lang-btn { padding: 8px 20px; border: 1.5px solid #D63B2F; border-radius: 20px; cursor: pointer; font-size: 13px; font-weight: 600; background: white; color: #D63B2F; transition: all 0.2s; }
+    .lang-btn.active { background: #D63B2F; color: white; }
+    .section { margin-bottom: 32px; }
+    h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; color: #111; }
+    h2 { font-size: 17px; font-weight: 700; margin: 24px 0 8px; color: #111; }
+    p { margin-bottom: 12px; font-size: 15px; color: #333; }
+    a { color: #D63B2F; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .updated { font-size: 13px; color: #999; margin-bottom: 32px; }
+    .card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; border: 1px solid #eee; }
+    .footer { text-align: center; font-size: 13px; color: #aaa; margin-top: 48px; padding-top: 24px; border-top: 1px solid #eee; }
+    [data-lang] { display: none; }
+    [data-lang].visible { display: block; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="logo">CRAFTIO</div>
+    <div class="subtitle">Privacy Policy / Zásady ochrany osobních údajů</div>
+  </div>
+
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('cs')">🇨🇿 Čeština</button>
+    <button class="lang-btn" onclick="setLang('en')">🇬🇧 English</button>
+  </div>
+
+  <!-- CZECH -->
+  <div data-lang="cs" class="visible">
+    <h1>Zásady ochrany osobních údajů</h1>
+    <p class="updated">Poslední aktualizace: 27. března 2026</p>
+
+    <div class="card section">
+      <h2>1. Kdo jsme</h2>
+      <p>Aplikaci Craftio provozuje Jiří Hrdina, OSVČ. Kontakt: <a href="mailto:craftioapp.official@gmail.com">craftioapp.official@gmail.com</a></p>
+    </div>
+
+    <div class="card section">
+      <h2>2. Jaká data sbíráme</h2>
+      <p><strong>Craftio nesbírá žádné osobní údaje.</strong> Aplikace neobsahuje registraci, přihlášení ani uživatelské účty.</p>
+      <p>Všechna data (recepty, plány, spíž, nastavení) jsou uložena <strong>výhradně lokálně</strong> na vašem zařízení v aplikaci SharedPreferences a interní paměti zařízení. Tato data neopouštějí vaše zařízení bez vašeho vědomí.</p>
+    </div>
+
+    <div class="card section">
+      <h2>3. Import receptů — AI funkce</h2>
+      <p>Pokud použijete funkci importu receptu (z URL, textu nebo fotky), text receptu je odeslán na náš proxy server (Vercel) a dále na Google Gemini API za účelem zpracování a strukturování receptu.</p>
+      <p>Tento text <strong>není ukládán</strong> na našich serverech. Zpracování probíhá okamžitě a data jsou po odpovědi zahozena. Na zpracování se vztahují <a href="https://policies.google.com/privacy" target="_blank">zásady ochrany soukromí Google</a>.</p>
+      <p>Import je volitelná funkce — aplikace funguje plně i bez ní.</p>
+    </div>
+
+    <div class="card section">
+      <h2>4. Fotografie</h2>
+      <p>Fotografie přidané k receptům jsou uloženy lokálně na vašem zařízení. Aplikace Craftio k nim přistupuje pouze pro zobrazení v aplikaci. Fotografie nejsou odesílány na žádné servery.</p>
+    </div>
+
+    <div class="card section">
+      <h2>5. Záloha dat</h2>
+      <p>Aplikace umožňuje export dat (recepty, ceník) do souboru Excel, který si uložíte dle vlastního uvážení. Za bezpečnost exportovaných souborů zodpovídáte vy.</p>
+    </div>
+
+    <div class="card section">
+      <h2>6. Třetí strany</h2>
+      <p>Aplikace využívá následující služby třetích stran:</p>
+      <p>• <strong>Google ML Kit</strong> — rozpoznávání textu z fotek (OCR), funguje offline na zařízení</p>
+      <p>• <strong>Google Gemini API</strong> — AI zpracování textu receptů (pouze při použití funkce importu)</p>
+      <p>Aplikace neobsahuje reklamní SDK, analytické nástroje ani sledovací knihovny.</p>
+    </div>
+
+    <div class="card section">
+      <h2>7. Děti</h2>
+      <p>Aplikace Craftio není určena dětem mladším 13 let. Jelikož neshromažďujeme žádné osobní údaje, nehrozí žádné specifické riziko pro nezletilé uživatele.</p>
+    </div>
+
+    <div class="card section">
+      <h2>8. Vaše práva</h2>
+      <p>Protože neukládáme žádné vaše osobní údaje na serverech, není nutné žádat o jejich výmaz. Všechna data aplikace smažete odinstalováním aplikace nebo vymazáním dat aplikace v nastavení zařízení.</p>
+    </div>
+
+    <div class="card section">
+      <h2>9. Změny těchto zásad</h2>
+      <p>V případě podstatných změn vás budeme informovat prostřednictvím aktualizace aplikace. Aktuální verze je vždy dostupná na této stránce.</p>
+    </div>
+
+    <div class="card section">
+      <h2>10. Kontakt</h2>
+      <p>S dotazy ohledně ochrany osobních údajů nás kontaktujte na: <a href="mailto:craftioapp.official@gmail.com">craftioapp.official@gmail.com</a></p>
+    </div>
+  </div>
+
+  <!-- ENGLISH -->
+  <div data-lang="en">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: March 27, 2026</p>
+
+    <div class="card section">
+      <h2>1. Who We Are</h2>
+      <p>Craftio is operated by Jiří Hrdina, sole trader. Contact: <a href="mailto:craftioapp.official@gmail.com">craftioapp.official@gmail.com</a></p>
+    </div>
+
+    <div class="card section">
+      <h2>2. What Data We Collect</h2>
+      <p><strong>Craftio does not collect any personal data.</strong> The app has no registration, login, or user accounts.</p>
+      <p>All data (recipes, plans, pantry, settings) is stored <strong>exclusively on your device</strong> using SharedPreferences and internal device storage. This data does not leave your device without your knowledge.</p>
+    </div>
+
+    <div class="card section">
+      <h2>3. Recipe Import — AI Feature</h2>
+      <p>If you use the recipe import feature (from URL, text, or photo), the recipe text is sent to our proxy server (Vercel) and then to the Google Gemini API for parsing and structuring.</p>
+      <p>This text is <strong>not stored</strong> on our servers. Processing happens immediately and data is discarded after the response. Processing is subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+      <p>Import is an optional feature — the app works fully without it.</p>
+    </div>
+
+    <div class="card section">
+      <h2>4. Photos</h2>
+      <p>Photos added to recipes are stored locally on your device. Craftio accesses them only for display within the app. Photos are never sent to any servers.</p>
+    </div>
+
+    <div class="card section">
+      <h2>5. Data Backup</h2>
+      <p>The app allows you to export data (recipes, price list) to an Excel file that you save at your discretion. You are responsible for the security of exported files.</p>
+    </div>
+
+    <div class="card section">
+      <h2>6. Third Parties</h2>
+      <p>The app uses the following third-party services:</p>
+      <p>• <strong>Google ML Kit</strong> — on-device text recognition from photos (OCR), works offline</p>
+      <p>• <strong>Google Gemini API</strong> — AI processing of recipe text (only when using the import feature)</p>
+      <p>The app contains no advertising SDKs, analytics tools, or tracking libraries.</p>
+    </div>
+
+    <div class="card section">
+      <h2>7. Children</h2>
+      <p>Craftio is not directed at children under 13. Since we collect no personal data, there is no specific risk for minor users.</p>
+    </div>
+
+    <div class="card section">
+      <h2>8. Your Rights</h2>
+      <p>Since we store no personal data on our servers, there is nothing to request deletion of. All app data can be deleted by uninstalling the app or clearing app data in your device settings.</p>
+    </div>
+
+    <div class="card section">
+      <h2>9. Changes to This Policy</h2>
+      <p>We will notify you of significant changes through app updates. The current version is always available on this page.</p>
+    </div>
+
+    <div class="card section">
+      <h2>10. Contact</h2>
+      <p>For privacy-related questions, contact us at: <a href="mailto:craftioapp.official@gmail.com">craftioapp.official@gmail.com</a></p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Craftio &nbsp;·&nbsp; craftioapp.official@gmail.com &nbsp;·&nbsp; 2026
+  </div>
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.classList.toggle('visible', el.getAttribute('data-lang') === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent.includes(lang === 'cs' ? 'Čeština' : 'English'));
+    });
+  }
+</script>
+</body>
+</html>
