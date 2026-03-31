@@ -1,182 +1,263 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Craftio — Privacy Policy / Zásady ochrany osobních údajů</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #f9f9f9; color: #222; line-height: 1.7; }
-    .container { max-width: 780px; margin: 0 auto; padding: 48px 24px; }
-    .header { text-align: center; margin-bottom: 48px; }
-    .logo { font-size: 28px; font-weight: 900; color: #D63B2F; letter-spacing: 2px; }
-    .subtitle { font-size: 14px; color: #888; margin-top: 6px; }
-    .lang-toggle { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; }
-    .lang-btn { padding: 8px 20px; border: 1.5px solid #D63B2F; border-radius: 20px; cursor: pointer; font-size: 13px; font-weight: 600; background: white; color: #D63B2F; transition: all 0.2s; }
-    .lang-btn.active { background: #D63B2F; color: white; }
-    .section { margin-bottom: 32px; }
-    h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; color: #111; }
-    h2 { font-size: 17px; font-weight: 700; margin: 24px 0 8px; color: #111; }
-    p { margin-bottom: 12px; font-size: 15px; color: #333; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0e0e0e;
+      color: #e8e8e8;
+      line-height: 1.7;
+    }
+    header {
+      background: #111;
+      border-bottom: 1px solid #222;
+      padding: 28px 24px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    header p {
+      font-size: 13px;
+      color: #888;
+      letter-spacing: 1px;
+    }
+    .lang-switch {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .lang-switch a {
+      font-size: 13px;
+      color: #888;
+      text-decoration: none;
+      padding: 5px 14px;
+      border: 1px solid #333;
+      border-radius: 20px;
+      transition: all 0.2s;
+    }
+    .lang-switch a:hover, .lang-switch a.active {
+      border-color: #D63B2F;
+      color: #fff;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+    .section-block {
+      padding: 48px 0 0;
+    }
+    .section-block + .section-block {
+      border-top: 1px solid #1e1e1e;
+      margin-top: 0;
+    }
+    .lang-cs { display: block; }
+    .lang-en { display: none; }
+    h2.pp-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #D63B2F;
+    }
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #D63B2F;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin: 32px 0 10px;
+    }
+    h3:first-of-type { margin-top: 0; }
+    p { font-size: 14px; color: #bbb; margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: #e8e8e8; }
     a { color: #D63B2F; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .updated { font-size: 13px; color: #999; margin-bottom: 32px; }
-    .card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; border: 1px solid #eee; }
-    .footer { text-align: center; font-size: 13px; color: #aaa; margin-top: 48px; padding-top: 24px; border-top: 1px solid #eee; }
-    [data-lang] { display: none; }
-    [data-lang].visible { display: block; }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    ul li {
+      font-size: 14px;
+      color: #bbb;
+      padding: 6px 0 6px 20px;
+      position: relative;
+    }
+    ul li::before {
+      content: '•';
+      color: #D63B2F;
+      position: absolute;
+      left: 0;
+    }
+    ul li strong { color: #e8e8e8; }
+    .badge {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+    footer {
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid #1e1e1e;
+      font-size: 12px;
+      color: #555;
+      letter-spacing: 1px;
+    }
+    .divider {
+      border: none;
+      border-top: 2px solid #1a1a1a;
+      margin: 48px 0 0;
+    }
   </style>
 </head>
 <body>
+
+<header>
+  <h1>CRAFTIO</h1>
+  <p>Privacy Policy / Zásady ochrany osobních údajů</p>
+  <div class="lang-switch">
+    <a href="#" class="active" onclick="setLang('cs'); return false;">🇨🇿 Čeština</a>
+    <a href="#" onclick="setLang('en'); return false;">🇬🇧 English</a>
+  </div>
+</header>
+
 <div class="container">
-  <div class="header">
-    <div class="logo">CRAFTIO</div>
-    <div class="subtitle">Privacy Policy / Zásady ochrany osobních údajů</div>
-  </div>
 
-  <div class="lang-toggle">
-    <button class="lang-btn active" onclick="setLang('cs')">🇨🇿 Čeština</button>
-    <button class="lang-btn" onclick="setLang('en')">🇬🇧 English</button>
-  </div>
+  <!-- ── CZECH ── -->
+  <div class="lang-cs">
+    <div class="section-block">
+      <h2 class="pp-title">Zásady ochrany osobních údajů</h2>
+      <span class="badge">Poslední aktualizace: 31. března 2026 · Verze 1.0</span>
 
-  <!-- CZECH -->
-  <div data-lang="cs" class="visible">
-    <h1>Zásady ochrany osobních údajů</h1>
-    <p class="updated">Poslední aktualizace: 27. března 2026</p>
-
-    <div class="card section">
-      <h2>1. Kdo jsme</h2>
+      <h3>1. Kdo jsme</h3>
       <p>Aplikaci Craftio provozuje Jiří Hrdina, OSVČ. Kontakt: <a href="mailto:craftioapp.official@gmail.com">craftioapp.official@gmail.com</a></p>
-    </div>
 
-    <div class="card section">
-      <h2>2. Jaká data sbíráme</h2>
+      <h3>2. Jaká data sbíráme</h3>
       <p><strong>Craftio nesbírá žádné osobní údaje.</strong> Aplikace neobsahuje registraci, přihlášení ani uživatelské účty.</p>
-      <p>Všechna data (recepty, plány, spíž, nastavení) jsou uložena <strong>výhradně lokálně</strong> na vašem zařízení v aplikaci SharedPreferences a interní paměti zařízení. Tato data neopouštějí vaše zařízení bez vašeho vědomí.</p>
-    </div>
+      <p>Všechna data (recepty, plány, spíž, nastavení) jsou uložena <strong>výhradně lokálně</strong> na vašem zařízení pomocí SharedPreferences a interní paměti zařízení. Tato data neopouštějí vaše zařízení bez vašeho vědomí.</p>
 
-    <div class="card section">
-      <h2>3. Import receptů — AI funkce</h2>
+      <h3>3. Import receptů — AI funkce</h3>
       <p>Pokud použijete funkci importu receptu (z URL, textu nebo fotky), text receptu je odeslán na náš proxy server (Vercel) a dále na Google Gemini API za účelem zpracování a strukturování receptu.</p>
       <p>Tento text <strong>není ukládán</strong> na našich serverech. Zpracování probíhá okamžitě a data jsou po odpovědi zahozena. Na zpracování se vztahují <a href="https://policies.google.com/privacy" target="_blank">zásady ochrany soukromí Google</a>.</p>
       <p>Import je volitelná funkce — aplikace funguje plně i bez ní.</p>
-    </div>
 
-    <div class="card section">
-      <h2>4. Fotografie</h2>
+      <h3>4. Fotografie</h3>
       <p>Fotografie přidané k receptům jsou uloženy lokálně na vašem zařízení. Aplikace Craftio k nim přistupuje pouze pro zobrazení v aplikaci. Fotografie nejsou odesílány na žádné servery.</p>
-    </div>
 
-    <div class="card section">
-      <h2>5. Záloha dat</h2>
-      <p>Aplikace umožňuje export dat (recepty, ceník) do souboru Excel, který si uložíte dle vlastního uvážení. Za bezpečnost exportovaných souborů zodpovídáte vy.</p>
-    </div>
+      <h3>5. Export a import dat</h3>
+      <p>Aplikace umožňuje export a import dat ve formátu Excel (.xlsx) — konkrétně receptů, ceníku surovin a skladových položek. Tyto soubory si ukládáte dle vlastního uvážení na své zařízení.</p>
+      <p>Aplikace dále umožňuje export receptů ve formátu PDF. Exportovaný soubor je vygenerován lokálně na vašem zařízení a nikam odesílán.</p>
+      <p>Za bezpečnost exportovaných souborů zodpovídáte vy.</p>
 
-    <div class="card section">
-      <h2>6. Třetí strany</h2>
-      <p>Aplikace využívá následující služby třetích stran:</p>
-      <p>• <strong>Google ML Kit</strong> — rozpoznávání textu z fotek (OCR), funguje offline na zařízení</p>
-      <p>• <strong>Google Gemini API</strong> — AI zpracování textu receptů (pouze při použití funkce importu)</p>
+      <h3>6. Oznámení (notifikace)</h3>
+      <p>Aplikace využívá lokální push notifikace pro ranní přehled pečení, upomínky plánovaných receptů a upozornění na expiraci potravin ve spíži. Tato oznámení jsou generována výhradně na vašem zařízení. Žádná data spojená s notifikacemi nejsou odesílána na servery.</p>
+
+      <h3>7. Třetí strany</h3>
+      <ul>
+        <li><strong>Google ML Kit</strong> — rozpoznávání textu z fotek (OCR), funguje offline na zařízení</li>
+        <li><strong>Google Gemini API</strong> — AI zpracování textu receptů (pouze při použití funkce importu)</li>
+      </ul>
       <p>Aplikace neobsahuje reklamní SDK, analytické nástroje ani sledovací knihovny.</p>
-    </div>
 
-    <div class="card section">
-      <h2>7. Děti</h2>
+      <h3>8. Děti</h3>
       <p>Aplikace Craftio není určena dětem mladším 13 let. Jelikož neshromažďujeme žádné osobní údaje, nehrozí žádné specifické riziko pro nezletilé uživatele.</p>
-    </div>
 
-    <div class="card section">
-      <h2>8. Vaše práva</h2>
+      <h3>9. Vaše práva</h3>
       <p>Protože neukládáme žádné vaše osobní údaje na serverech, není nutné žádat o jejich výmaz. Všechna data aplikace smažete odinstalováním aplikace nebo vymazáním dat aplikace v nastavení zařízení.</p>
-    </div>
 
-    <div class="card section">
-      <h2>9. Změny těchto zásad</h2>
+      <h3>10. Změny těchto zásad</h3>
       <p>V případě podstatných změn vás budeme informovat prostřednictvím aktualizace aplikace. Aktuální verze je vždy dostupná na této stránce.</p>
-    </div>
 
-    <div class="card section">
-      <h2>10. Kontakt</h2>
+      <h3>11. Kontakt</h3>
       <p>S dotazy ohledně ochrany osobních údajů nás kontaktujte na: <a href="mailto:craftioapp.official@gmail.com">craftioapp.official@gmail.com</a></p>
     </div>
   </div>
 
-  <!-- ENGLISH -->
-  <div data-lang="en">
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: March 27, 2026</p>
+  <!-- ── ENGLISH ── -->
+  <div class="lang-en">
+    <div class="section-block">
+      <h2 class="pp-title">Privacy Policy</h2>
+      <span class="badge">Last updated: March 31, 2026 · Version 1.0</span>
 
-    <div class="card section">
-      <h2>1. Who We Are</h2>
+      <h3>1. Who We Are</h3>
       <p>Craftio is operated by Jiří Hrdina, sole trader. Contact: <a href="mailto:craftioapp.official@gmail.com">craftioapp.official@gmail.com</a></p>
-    </div>
 
-    <div class="card section">
-      <h2>2. What Data We Collect</h2>
+      <h3>2. What Data We Collect</h3>
       <p><strong>Craftio does not collect any personal data.</strong> The app has no registration, login, or user accounts.</p>
       <p>All data (recipes, plans, pantry, settings) is stored <strong>exclusively on your device</strong> using SharedPreferences and internal device storage. This data does not leave your device without your knowledge.</p>
-    </div>
 
-    <div class="card section">
-      <h2>3. Recipe Import — AI Feature</h2>
+      <h3>3. Recipe Import — AI Feature</h3>
       <p>If you use the recipe import feature (from URL, text, or photo), the recipe text is sent to our proxy server (Vercel) and then to the Google Gemini API for parsing and structuring.</p>
       <p>This text is <strong>not stored</strong> on our servers. Processing happens immediately and data is discarded after the response. Processing is subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
       <p>Import is an optional feature — the app works fully without it.</p>
-    </div>
 
-    <div class="card section">
-      <h2>4. Photos</h2>
+      <h3>4. Photos</h3>
       <p>Photos added to recipes are stored locally on your device. Craftio accesses them only for display within the app. Photos are never sent to any servers.</p>
-    </div>
 
-    <div class="card section">
-      <h2>5. Data Backup</h2>
-      <p>The app allows you to export data (recipes, price list) to an Excel file that you save at your discretion. You are responsible for the security of exported files.</p>
-    </div>
+      <h3>5. Data Export and Import</h3>
+      <p>The app allows you to export and import data in Excel format (.xlsx) — specifically recipes, ingredient price lists, and pantry items. These files are saved at your discretion to your device.</p>
+      <p>The app also allows you to export recipes in PDF format. The exported file is generated locally on your device and is never transmitted anywhere.</p>
+      <p>You are responsible for the security of exported files.</p>
 
-    <div class="card section">
-      <h2>6. Third Parties</h2>
-      <p>The app uses the following third-party services:</p>
-      <p>• <strong>Google ML Kit</strong> — on-device text recognition from photos (OCR), works offline</p>
-      <p>• <strong>Google Gemini API</strong> — AI processing of recipe text (only when using the import feature)</p>
+      <h3>6. Notifications</h3>
+      <p>The app uses local push notifications for the morning baking overview, planned recipe reminders, and pantry expiry alerts. These notifications are generated exclusively on your device. No data related to notifications is sent to any servers.</p>
+
+      <h3>7. Third Parties</h3>
+      <ul>
+        <li><strong>Google ML Kit</strong> — on-device text recognition from photos (OCR), works offline</li>
+        <li><strong>Google Gemini API</strong> — AI processing of recipe text (only when using the import feature)</li>
+      </ul>
       <p>The app contains no advertising SDKs, analytics tools, or tracking libraries.</p>
-    </div>
 
-    <div class="card section">
-      <h2>7. Children</h2>
+      <h3>8. Children</h3>
       <p>Craftio is not directed at children under 13. Since we collect no personal data, there is no specific risk for minor users.</p>
-    </div>
 
-    <div class="card section">
-      <h2>8. Your Rights</h2>
+      <h3>9. Your Rights</h3>
       <p>Since we store no personal data on our servers, there is nothing to request deletion of. All app data can be deleted by uninstalling the app or clearing app data in your device settings.</p>
-    </div>
 
-    <div class="card section">
-      <h2>9. Changes to This Policy</h2>
+      <h3>10. Changes to This Policy</h3>
       <p>We will notify you of significant changes through app updates. The current version is always available on this page.</p>
-    </div>
 
-    <div class="card section">
-      <h2>10. Contact</h2>
+      <h3>11. Contact</h3>
       <p>For privacy-related questions, contact us at: <a href="mailto:craftioapp.official@gmail.com">craftioapp.official@gmail.com</a></p>
     </div>
   </div>
 
-  <div class="footer">
-    Craftio &nbsp;·&nbsp; craftioapp.official@gmail.com &nbsp;·&nbsp; 2026
-  </div>
 </div>
+
+<footer>
+  Craftio &nbsp;·&nbsp; craftioapp.official@gmail.com &nbsp;·&nbsp; 2026
+</footer>
 
 <script>
   function setLang(lang) {
-    document.querySelectorAll('[data-lang]').forEach(el => {
-      el.classList.toggle('visible', el.getAttribute('data-lang') === lang);
-    });
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.textContent.includes(lang === 'cs' ? 'Čeština' : 'English'));
+    document.querySelector('.lang-cs').style.display = lang === 'cs' ? 'block' : 'none';
+    document.querySelector('.lang-en').style.display = lang === 'en' ? 'block' : 'none';
+    document.querySelectorAll('.lang-switch a').forEach((a, i) => {
+      a.classList.toggle('active', (lang === 'cs' && i === 0) || (lang === 'en' && i === 1));
     });
   }
 </script>
+
 </body>
 </html>
