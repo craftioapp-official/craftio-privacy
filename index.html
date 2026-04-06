@@ -123,11 +123,6 @@
       color: #555;
       letter-spacing: 1px;
     }
-    .divider {
-      border: none;
-      border-top: 2px solid #1a1a1a;
-      margin: 48px 0 0;
-    }
   </style>
 </head>
 <body>
@@ -147,48 +142,68 @@
   <div class="lang-cs">
     <div class="section-block">
       <h2 class="pp-title">Zásady ochrany osobních údajů</h2>
-      <span class="badge">Poslední aktualizace: 31. března 2026 · Verze 1.0</span>
+      <span class="badge">Poslední aktualizace: 6. dubna 2026 · Verze 1.1</span>
 
       <h3>1. Kdo jsme</h3>
       <p>Aplikaci Craftio provozuje Jiří Hrdina, OSVČ. Kontakt: <a href="mailto:craftioapp.official@gmail.com">craftioapp.official@gmail.com</a></p>
 
-      <h3>2. Jaká data sbíráme</h3>
-      <p><strong>Craftio nesbírá žádné osobní údaje.</strong> Aplikace neobsahuje registraci, přihlášení ani uživatelské účty.</p>
-      <p>Všechna data (recepty, plány, spíž, nastavení) jsou uložena <strong>výhradně lokálně</strong> na vašem zařízení pomocí SharedPreferences a interní paměti zařízení. Tato data neopouštějí vaše zařízení bez vašeho vědomí.</p>
+      <h3>2. Přihlášení a uživatelský účet</h3>
+      <p>Aplikace Craftio nabízí volitelné přihlášení prostřednictvím <strong>Google Sign-In</strong>. Přihlášení není povinné — aplikace funguje plně i bez účtu.</p>
+      <p>Při přihlášení získáme od Googlu následující údaje: jméno, e-mailová adresa a profilová fotografie. Tyto údaje používáme výhradně pro identifikaci vašeho účtu v rámci aplikace a pro zobrazení vašeho profilu.</p>
+      <p>Na zpracování přihlášení přes Google se vztahují <a href="https://policies.google.com/privacy" target="_blank">Zásady ochrany soukromí Google</a>.</p>
 
-      <h3>3. Import receptů — AI funkce</h3>
+      <h3>3. Cloudová záloha dat</h3>
+      <p>Pokud jste přihlášeni, aplikace automaticky zálohuje vaše data do <strong>Google Firebase (Firestore)</strong> — cloudové databáze provozované společností Google. Záloha zahrnuje:</p>
+      <ul>
+        <li>Recepty, plány pečení, spíž, ceník surovin</li>
+        <li>Nastavení aplikace, vlastní suroviny a nutriční hodnoty</li>
+        <li>Statistiky používání (streak, počty akcí)</li>
+        <li>Fotografické přílohy receptů a profilová fotografie (uloženy v <strong>Firebase Storage</strong>)</li>
+      </ul>
+      <p>Tato data jsou uložena na serverech Google v regionu <strong>europe-west1 (Belgie)</strong>. Přístup k datům má výhradně vlastník účtu — data jsou chráněna pravidly Firestore na základě ověřené identity.</p>
+      <p>Bez přihlášení jsou veškerá data uložena pouze lokálně na vašem zařízení a neopouštějí ho.</p>
+      <p>Na cloudové úložiště se vztahují <a href="https://firebase.google.com/support/privacy" target="_blank">Zásady ochrany soukromí Firebase</a>.</p>
+
+      <h3>4. Import receptů — AI funkce</h3>
       <p>Pokud použijete funkci importu receptu (z URL, textu nebo fotky), text receptu je odeslán na náš proxy server (Vercel) a dále na Google Gemini API za účelem zpracování a strukturování receptu.</p>
-      <p>Tento text <strong>není ukládán</strong> na našich serverech. Zpracování probíhá okamžitě a data jsou po odpovědi zahozena. Na zpracování se vztahují <a href="https://policies.google.com/privacy" target="_blank">zásady ochrany soukromí Google</a>.</p>
+      <p>Tento text <strong>není ukládán</strong> na našich serverech. Zpracování probíhá okamžitě a data jsou po odpovědi zahozena. Na zpracování se vztahují <a href="https://policies.google.com/privacy" target="_blank">Zásady ochrany soukromí Google</a>.</p>
       <p>Import je volitelná funkce — aplikace funguje plně i bez ní.</p>
 
-      <h3>4. Fotografie</h3>
-      <p>Fotografie přidané k receptům jsou uloženy lokálně na vašem zařízení. Aplikace Craftio k nim přistupuje pouze pro zobrazení v aplikaci. Fotografie nejsou odesílány na žádné servery.</p>
+      <h3>5. Fotografie</h3>
+      <p>Fotografie přidané k receptům jsou uloženy lokálně na vašem zařízení. Pokud jste přihlášeni a máte aktivní cloudovou zálohu, fotografie jsou také nahrány do <strong>Firebase Storage</strong> za účelem synchronizace mezi zařízeními. Fotografie nejsou sdíleny s třetími stranami ani používány k jiným účelům.</p>
 
-      <h3>5. Export a import dat</h3>
-      <p>Aplikace umožňuje export a import dat ve formátu Excel (.xlsx) — konkrétně receptů, ceníku surovin a skladových položek. Tyto soubory si ukládáte dle vlastního uvážení na své zařízení.</p>
-      <p>Aplikace dále umožňuje export receptů ve formátu PDF. Exportovaný soubor je vygenerován lokálně na vašem zařízení a nikam odesílán.</p>
-      <p>Za bezpečnost exportovaných souborů zodpovídáte vy.</p>
+      <h3>6. Platby a předplatné</h3>
+      <p>Aplikace nabízí volitelné placené funkce (Craftio PLUS a PRO) prostřednictvím předplatného. Platby jsou zpracovávány přes <strong>Google Play</strong> a <strong>RevenueCat</strong>.</p>
+      <p>Craftio nemá přístup k vašim platebním údajům (číslo karty apod.) — tyto informace zpracovává výhradně Google Play. RevenueCat slouží ke správě entitlementů (ověření aktivního předplatného).</p>
+      <p>Na zpracování plateb se vztahují <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&ldt=privacynotice" target="_blank">Zásady ochrany soukromí Google Pay</a> a <a href="https://www.revenuecat.com/privacy" target="_blank">Zásady ochrany soukromí RevenueCat</a>.</p>
 
-      <h3>6. Oznámení (notifikace)</h3>
+      <h3>7. Export a import dat</h3>
+      <p>Aplikace umožňuje export a import dat ve formátu Excel (.xlsx) a export receptů ve formátu PDF. Tyto soubory jsou generovány lokálně na vašem zařízení a nikam odesílány. Za bezpečnost exportovaných souborů zodpovídáte vy.</p>
+
+      <h3>8. Oznámení (notifikace)</h3>
       <p>Aplikace využívá lokální push notifikace pro ranní přehled pečení, upomínky plánovaných receptů a upozornění na expiraci potravin ve spíži. Tato oznámení jsou generována výhradně na vašem zařízení. Žádná data spojená s notifikacemi nejsou odesílána na servery.</p>
 
-      <h3>7. Třetí strany</h3>
+      <h3>9. Třetí strany</h3>
       <ul>
+        <li><strong>Google Sign-In</strong> — volitelné přihlášení přes Google účet</li>
+        <li><strong>Google Firebase (Firestore)</strong> — cloudová záloha dat (pouze pro přihlášené uživatele)</li>
+        <li><strong>Firebase Storage</strong> — cloudové úložiště fotografií (pouze pro přihlášené uživatele)</li>
         <li><strong>Google ML Kit</strong> — rozpoznávání textu z fotek (OCR), funguje offline na zařízení</li>
         <li><strong>Google Gemini API</strong> — AI zpracování textu receptů (pouze při použití funkce importu)</li>
+        <li><strong>RevenueCat</strong> — správa předplatného a ověření zakoupených funkcí</li>
       </ul>
       <p>Aplikace neobsahuje reklamní SDK, analytické nástroje ani sledovací knihovny.</p>
 
-      <h3>8. Děti</h3>
-      <p>Aplikace Craftio není určena dětem mladším 13 let. Jelikož neshromažďujeme žádné osobní údaje, nehrozí žádné specifické riziko pro nezletilé uživatele.</p>
+      <h3>10. Děti</h3>
+      <p>Aplikace Craftio není určena dětem mladším 13 let. Funkce cloudové zálohy a přihlášení jsou dostupné pouze uživatelům, kteří mají Google účet splňující věkové požadavky Google.</p>
 
-      <h3>9. Vaše práva</h3>
-      <p>Protože neukládáme žádné vaše osobní údaje na serverech, není nutné žádat o jejich výmaz. Všechna data aplikace smažete odinstalováním aplikace nebo vymazáním dat aplikace v nastavení zařízení.</p>
+      <h3>11. Vaše práva</h3>
+      <p>Máte právo na přístup, opravu nebo výmaz svých osobních údajů. Lokální data smažete odinstalováním aplikace nebo vymazáním dat aplikace v nastavení zařízení. Cloudová data (Firestore a Firebase Storage) jsou automaticky svázána s vaším Google účtem — pro jejich výmaz nás kontaktujte na adrese níže.</p>
 
-      <h3>10. Změny těchto zásad</h3>
+      <h3>12. Změny těchto zásad</h3>
       <p>V případě podstatných změn vás budeme informovat prostřednictvím aktualizace aplikace. Aktuální verze je vždy dostupná na této stránce.</p>
 
-      <h3>11. Kontakt</h3>
+      <h3>13. Kontakt</h3>
       <p>S dotazy ohledně ochrany osobních údajů nás kontaktujte na: <a href="mailto:craftioapp.official@gmail.com">craftioapp.official@gmail.com</a></p>
     </div>
   </div>
@@ -197,48 +212,68 @@
   <div class="lang-en">
     <div class="section-block">
       <h2 class="pp-title">Privacy Policy</h2>
-      <span class="badge">Last updated: March 31, 2026 · Version 1.0</span>
+      <span class="badge">Last updated: April 6, 2026 · Version 1.1</span>
 
       <h3>1. Who We Are</h3>
       <p>Craftio is operated by Jiří Hrdina, sole trader. Contact: <a href="mailto:craftioapp.official@gmail.com">craftioapp.official@gmail.com</a></p>
 
-      <h3>2. What Data We Collect</h3>
-      <p><strong>Craftio does not collect any personal data.</strong> The app has no registration, login, or user accounts.</p>
-      <p>All data (recipes, plans, pantry, settings) is stored <strong>exclusively on your device</strong> using SharedPreferences and internal device storage. This data does not leave your device without your knowledge.</p>
+      <h3>2. Sign-In and User Account</h3>
+      <p>Craftio offers optional sign-in via <strong>Google Sign-In</strong>. Sign-in is not required — the app works fully without an account.</p>
+      <p>When you sign in, we receive the following data from Google: name, email address, and profile photo. This data is used solely to identify your account within the app and display your profile.</p>
+      <p>Sign-in via Google is subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
 
-      <h3>3. Recipe Import — AI Feature</h3>
+      <h3>3. Cloud Backup</h3>
+      <p>If you are signed in, the app automatically backs up your data to <strong>Google Firebase (Firestore)</strong> — a cloud database operated by Google. The backup includes:</p>
+      <ul>
+        <li>Recipes, baking plans, pantry, ingredient price list</li>
+        <li>App settings, custom ingredients and nutritional values</li>
+        <li>Usage statistics (streak, action counts)</li>
+        <li>Recipe photo attachments and profile photo (stored in <strong>Firebase Storage</strong>)</li>
+      </ul>
+      <p>This data is stored on Google's servers in the <strong>europe-west1 (Belgium)</strong> region. Only the account owner has access — data is protected by Firestore security rules based on verified identity.</p>
+      <p>Without sign-in, all data is stored only locally on your device and does not leave it.</p>
+      <p>Cloud storage is subject to <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a>.</p>
+
+      <h3>4. Recipe Import — AI Feature</h3>
       <p>If you use the recipe import feature (from URL, text, or photo), the recipe text is sent to our proxy server (Vercel) and then to the Google Gemini API for parsing and structuring.</p>
       <p>This text is <strong>not stored</strong> on our servers. Processing happens immediately and data is discarded after the response. Processing is subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
       <p>Import is an optional feature — the app works fully without it.</p>
 
-      <h3>4. Photos</h3>
-      <p>Photos added to recipes are stored locally on your device. Craftio accesses them only for display within the app. Photos are never sent to any servers.</p>
+      <h3>5. Photos</h3>
+      <p>Photos added to recipes are stored locally on your device. If you are signed in with cloud backup active, photos are also uploaded to <strong>Firebase Storage</strong> for cross-device synchronisation. Photos are not shared with third parties or used for any other purpose.</p>
 
-      <h3>5. Data Export and Import</h3>
-      <p>The app allows you to export and import data in Excel format (.xlsx) — specifically recipes, ingredient price lists, and pantry items. These files are saved at your discretion to your device.</p>
-      <p>The app also allows you to export recipes in PDF format. The exported file is generated locally on your device and is never transmitted anywhere.</p>
-      <p>You are responsible for the security of exported files.</p>
+      <h3>6. Payments and Subscriptions</h3>
+      <p>The app offers optional paid features (Craftio PLUS and PRO) via subscription. Payments are processed through <strong>Google Play</strong> and <strong>RevenueCat</strong>.</p>
+      <p>Craftio does not have access to your payment details (card numbers etc.) — this information is handled exclusively by Google Play. RevenueCat is used to manage entitlements (verifying active subscriptions).</p>
+      <p>Payment processing is subject to <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&ldt=privacynotice" target="_blank">Google Pay Privacy Notice</a> and <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a>.</p>
 
-      <h3>6. Notifications</h3>
+      <h3>7. Data Export and Import</h3>
+      <p>The app allows you to export and import data in Excel format (.xlsx) and export recipes in PDF format. These files are generated locally on your device and never transmitted anywhere. You are responsible for the security of exported files.</p>
+
+      <h3>8. Notifications</h3>
       <p>The app uses local push notifications for the morning baking overview, planned recipe reminders, and pantry expiry alerts. These notifications are generated exclusively on your device. No data related to notifications is sent to any servers.</p>
 
-      <h3>7. Third Parties</h3>
+      <h3>9. Third Parties</h3>
       <ul>
+        <li><strong>Google Sign-In</strong> — optional sign-in via Google account</li>
+        <li><strong>Google Firebase (Firestore)</strong> — cloud data backup (signed-in users only)</li>
+        <li><strong>Firebase Storage</strong> — cloud photo storage (signed-in users only)</li>
         <li><strong>Google ML Kit</strong> — on-device text recognition from photos (OCR), works offline</li>
         <li><strong>Google Gemini API</strong> — AI processing of recipe text (only when using the import feature)</li>
+        <li><strong>RevenueCat</strong> — subscription management and purchased feature verification</li>
       </ul>
       <p>The app contains no advertising SDKs, analytics tools, or tracking libraries.</p>
 
-      <h3>8. Children</h3>
-      <p>Craftio is not directed at children under 13. Since we collect no personal data, there is no specific risk for minor users.</p>
+      <h3>10. Children</h3>
+      <p>Craftio is not directed at children under 13. Cloud backup and sign-in features are only available to users with a Google account that meets Google's age requirements.</p>
 
-      <h3>9. Your Rights</h3>
-      <p>Since we store no personal data on our servers, there is nothing to request deletion of. All app data can be deleted by uninstalling the app or clearing app data in your device settings.</p>
+      <h3>11. Your Rights</h3>
+      <p>You have the right to access, correct, or delete your personal data. Local data can be deleted by uninstalling the app or clearing app data in your device settings. Cloud data (Firestore and Firebase Storage) is linked to your Google account — to request deletion, please contact us at the address below.</p>
 
-      <h3>10. Changes to This Policy</h3>
+      <h3>12. Changes to This Policy</h3>
       <p>We will notify you of significant changes through app updates. The current version is always available on this page.</p>
 
-      <h3>11. Contact</h3>
+      <h3>13. Contact</h3>
       <p>For privacy-related questions, contact us at: <a href="mailto:craftioapp.official@gmail.com">craftioapp.official@gmail.com</a></p>
     </div>
   </div>
