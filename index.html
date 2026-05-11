@@ -374,6 +374,49 @@
       a.classList.toggle('active', (lang === 'cs' && i === 0) || (lang === 'en' && i === 1));
     });
   }
+
+  // Auto-detect language from URL hash or browser preference
+  (function() {
+    var hash = window.location.hash;
+    var csAnchors = ['#smazani-uctu']; // CS-only anchors
+    var enAnchors = ['#account-deletion']; // EN-only anchors
+
+    var initialLang = 'cs'; // default
+
+    if (enAnchors.indexOf(hash) !== -1) {
+      initialLang = 'en';
+    } else if (csAnchors.indexOf(hash) !== -1) {
+      initialLang = 'cs';
+    } else if (!hash) {
+      // No hash — detect from browser language
+      var browserLang = (navigator.language || 'en').toLowerCase();
+      if (browserLang.indexOf('cs') !== 0 && browserLang.indexOf('sk') !== 0) {
+        // Not Czech or Slovak — use English
+        initialLang = 'en';
+      }
+    }
+
+    setLang(initialLang);
+
+    // After language switch, re-trigger anchor scroll (element was display:none before)
+    if (hash) {
+      setTimeout(function() {
+        var target = document.querySelector(hash);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
+  })();
+
+  // Also handle in-page anchor clicks (when user changes language and clicks an anchor)
+  window.addEventListener('hashchange', function() {
+    var hash = window.location.hash;
+    if (hash === '#account-deletion') setLang('en');
+    if (hash === '#smazani-uctu') setLang('cs');
+    setTimeout(function() {
+      var target = document.querySelector(hash);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  });
 </script>
 
 </body>
