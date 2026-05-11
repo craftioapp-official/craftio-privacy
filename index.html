@@ -142,7 +142,7 @@
   <div class="lang-cs">
     <div class="section-block">
       <h2 class="pp-title">Zásady ochrany osobních údajů</h2>
-      <span class="badge">Poslední aktualizace: 11. května 2026 · Verze 1.5</span>
+      <span class="badge">Poslední aktualizace: 11. května 2026 · Verze 1.6</span>
 
       <h3>1. Kdo jsme</h3>
       <p>Aplikaci Craftio provozuje Jiří Hrdina, OSVČ. Kontakt: <a href="mailto:info@getcraftio.com">info@getcraftio.com</a></p>
@@ -252,6 +252,21 @@
       </ul>
       <p>Lokální data uložená přímo ve vašem zařízení (offline recepty, mezipaměť) můžete kdykoliv odstranit smazáním aplikace Craftio nebo přes systémové nastavení (Nastavení → Aplikace → Craftio → Úložiště → Vymazat data).</p>
 
+      <h3 id="smazani-dat-v-appce">13b. Smazání jednotlivých dat v aplikaci</h3>
+      <p>Aplikace vám umožňuje <strong>kdykoliv samostatně smazat jakákoliv volitelná data, která nejsou nezbytná pro vedení vašeho účtu</strong> — bez nutnosti smazání celého účtu. Smazání proběhne okamžitě jak ve vašem zařízení, tak v cloudové záloze (Firestore / Firebase Storage).</p>
+      <p><strong>Data, která můžete sám smazat v aplikaci:</strong></p>
+      <ul>
+        <li>Jednotlivé recepty (Receptář → otevřít recept → smazat)</li>
+        <li>Fotografie a videa receptů (editace receptu → odebrat přílohu)</li>
+        <li>Naplánované termíny pečení a jejich kroky výroby (Plánovač → smazat plán; pokud máte aktivní integraci s kalendářem, odpovídající události se odeberou i ze systémového kalendáře)</li>
+        <li>Položky spíže a ceník surovin</li>
+        <li>Vlastní suroviny a vlastní nutriční hodnoty (Nastavení)</li>
+        <li>Profilová fotografie a přezdívka (Nastavení profilu)</li>
+        <li>Vámi sdílené recepty na Tržišti (Tržiště → Moje recepty → smazat — recept bude trvale skryt z veřejného zobrazení)</li>
+        <li>Uložené (saved) recepty z Tržiště ve vašem soukromém receptáři</li>
+      </ul>
+      <p><strong>Data vázaná na účet</strong> (jméno z poskytovatele Sign-In, e-mailová adresa, ID uživatele, achievementy, postup v ranku, kód země) lze smazat <strong>pouze úplným smazáním účtu</strong> postupem popsaným v bodě 13a výše.</p>
+
       <h3>14. Změny těchto zásad</h3>
       <p>V případě podstatných změn vás budeme informovat prostřednictvím aktualizace aplikace. Aktuální verze je vždy dostupná na této stránce.</p>
 
@@ -264,7 +279,7 @@
   <div class="lang-en">
     <div class="section-block">
       <h2 class="pp-title">Privacy Policy</h2>
-      <span class="badge">Last updated: May 11, 2026 · Version 1.5</span>
+      <span class="badge">Last updated: May 11, 2026 · Version 1.6</span>
 
       <h3>1. Who We Are</h3>
       <p>Craftio is operated by Jiří Hrdina, sole trader. Contact: <a href="mailto:info@getcraftio.com">info@getcraftio.com</a></p>
@@ -374,6 +389,21 @@
       </ul>
       <p>Local data stored directly on your device (offline recipes, cache) can be removed at any time by uninstalling the Craftio app or via system settings (Settings → Apps → Craftio → Storage → Clear data).</p>
 
+      <h3 id="in-app-data-deletion">13b. In-app Data Deletion</h3>
+      <p>The app allows you to <strong>delete any optional data that is not essential to maintaining your account at any time</strong> — without needing to delete the entire account. Deletion takes effect immediately both on your device and in the cloud backup (Firestore / Firebase Storage).</p>
+      <p><strong>Data you can delete yourself within the app:</strong></p>
+      <ul>
+        <li>Individual recipes (Recipes → open recipe → delete)</li>
+        <li>Recipe photos and videos (edit recipe → remove attachment)</li>
+        <li>Scheduled baking dates and their production steps (Planner → delete plan; if you have calendar integration enabled, the corresponding events are also removed from your system calendar)</li>
+        <li>Pantry items and ingredient price list</li>
+        <li>Custom ingredients and custom nutritional values (Settings)</li>
+        <li>Profile photo and nickname (Profile settings)</li>
+        <li>Recipes you have shared on the Marketplace (Marketplace → My recipes → delete — the recipe will be permanently hidden from public view)</li>
+        <li>Recipes saved from the Marketplace into your private collection</li>
+      </ul>
+      <p><strong>Account-bound data</strong> (name from your Sign-In provider, email address, user ID, achievements, rank progress, country code) can only be deleted by <strong>fully deleting your account</strong>, following the procedure described in section 13a above.</p>
+
       <h3>14. Changes to This Policy</h3>
       <p>We will notify you of significant changes through app updates. The current version is always available on this page.</p>
 
@@ -400,8 +430,8 @@
   // Auto-detect language from URL hash or browser preference
   (function() {
     var hash = window.location.hash;
-    var csAnchors = ['#smazani-uctu']; // CS-only anchors
-    var enAnchors = ['#account-deletion']; // EN-only anchors
+    var csAnchors = ['#smazani-uctu', '#smazani-dat-v-appce']; // CS-only anchors
+    var enAnchors = ['#account-deletion', '#in-app-data-deletion']; // EN-only anchors
 
     var initialLang = 'cs'; // default
 
@@ -432,8 +462,8 @@
   // Also handle in-page anchor clicks (when user changes language and clicks an anchor)
   window.addEventListener('hashchange', function() {
     var hash = window.location.hash;
-    if (hash === '#account-deletion') setLang('en');
-    if (hash === '#smazani-uctu') setLang('cs');
+    if (hash === '#account-deletion' || hash === '#in-app-data-deletion') setLang('en');
+    if (hash === '#smazani-uctu' || hash === '#smazani-dat-v-appce') setLang('cs');
     setTimeout(function() {
       var target = document.querySelector(hash);
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
