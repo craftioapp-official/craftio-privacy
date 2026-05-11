@@ -142,7 +142,7 @@
   <div class="lang-cs">
     <div class="section-block">
       <h2 class="pp-title">Zásady ochrany osobních údajů</h2>
-      <span class="badge">Poslední aktualizace: 11. května 2026 · Verze 1.4</span>
+      <span class="badge">Poslední aktualizace: 11. května 2026 · Verze 1.5</span>
 
       <h3>1. Kdo jsme</h3>
       <p>Aplikaci Craftio provozuje Jiří Hrdina, OSVČ. Kontakt: <a href="mailto:info@getcraftio.com">info@getcraftio.com</a></p>
@@ -160,7 +160,7 @@
         <li>Recepty, plány pečení, spíž, ceník surovin</li>
         <li>Nastavení aplikace, vlastní suroviny a nutriční hodnoty</li>
         <li>Statistiky používání (streak, počty akcí, odemčené achievementy)</li>
-        <li>Fotografické přílohy receptů a profilová fotografie (uloženy v <strong>Firebase Storage</strong>)</li>
+        <li>Fotografické a video přílohy receptů a profilová fotografie (uloženy v <strong>Firebase Storage</strong>)</li>
       </ul>
       <p>Tato data jsou uložena na serverech Google v regionu <strong>europe-west1 (Belgie)</strong>. Přístup k datům má výhradně vlastník účtu — data jsou chráněna pravidly Firestore na základě ověřené identity.</p>
       <p>Bez přihlášení jsou veškerá data uložena pouze lokálně na vašem zařízení a neopouštějí ho.</p>
@@ -184,8 +184,9 @@
       <p>Tento text <strong>není ukládán</strong> na našich serverech. Zpracování probíhá okamžitě a data jsou po odpovědi zahozena. Na zpracování se vztahují <a href="https://policies.google.com/privacy" target="_blank">Zásady ochrany soukromí Google</a>.</p>
       <p>Import je volitelná funkce — aplikace funguje plně i bez ní.</p>
 
-      <h3>6. Fotografie</h3>
-      <p>Fotografie přidané k receptům jsou uloženy lokálně na vašem zařízení. Pokud jste přihlášeni a máte aktivní cloudovou zálohu, fotografie jsou také nahrány do <strong>Firebase Storage</strong> za účelem synchronizace mezi zařízeními. Pokud sdílíte recept na Tržiště, jeho fotografie jsou veřejně dostupné ostatním uživatelům aplikace.</p>
+      <h3>6. Fotografie a videa</h3>
+      <p>Fotografie a videa, která přidáte k receptům (např. instruktážní video postupu pečení), jsou uloženy lokálně na vašem zařízení. Pokud jste přihlášeni a máte aktivní cloudovou zálohu, fotografie a videa jsou také nahrány do <strong>Firebase Storage</strong> za účelem synchronizace mezi zařízeními.</p>
+      <p>Pokud sdílíte recept na Tržiště, jeho <strong>fotografie</strong> jsou veřejně dostupné ostatním uživatelům aplikace. <strong>Videa se na Tržišti nesdílejí</strong> — zůstávají dostupná pouze ve vašem soukromém receptáři.</p>
 
       <h3>7. Platby a předplatné</h3>
       <p>Aplikace nabízí volitelné placené funkce (Craftio PLUS a PRO) prostřednictvím předplatného. Platby jsou zpracovávány přes <strong>Google Play</strong> (Android), <strong>Apple App Store</strong> (iOS) a <strong>RevenueCat</strong>.</p>
@@ -239,7 +240,7 @@
       <ul>
         <li>Váš uživatelský profil (jméno, e-mail, přezdívka, profilová fotografie, kód země)</li>
         <li>Všechny vaše recepty, plány pečení, položky spíže a ceník surovin uložené v cloudu (Firestore)</li>
-        <li>Vaše fotografie receptů a profilová fotografie (Firebase Storage)</li>
+        <li>Vaše fotografie a videa receptů a profilová fotografie (Firebase Storage)</li>
         <li>Vaše achievementy a postup v ranku</li>
         <li>Vaše uložené (saved) recepty z Tržiště a vaše hodnocení</li>
         <li>Recepty, které jste sdíleli na Tržišti, budou trvale skryty z veřejného zobrazení</li>
@@ -263,7 +264,7 @@
   <div class="lang-en">
     <div class="section-block">
       <h2 class="pp-title">Privacy Policy</h2>
-      <span class="badge">Last updated: May 11, 2026 · Version 1.4</span>
+      <span class="badge">Last updated: May 11, 2026 · Version 1.5</span>
 
       <h3>1. Who We Are</h3>
       <p>Craftio is operated by Jiří Hrdina, sole trader. Contact: <a href="mailto:info@getcraftio.com">info@getcraftio.com</a></p>
@@ -281,7 +282,7 @@
         <li>Recipes, baking plans, pantry, ingredient price list</li>
         <li>App settings, custom ingredients and nutritional values</li>
         <li>Usage statistics (streak, action counts, unlocked achievements)</li>
-        <li>Recipe photo attachments and profile photo (stored in <strong>Firebase Storage</strong>)</li>
+        <li>Recipe photo and video attachments and profile photo (stored in <strong>Firebase Storage</strong>)</li>
       </ul>
       <p>This data is stored on Google's servers in the <strong>europe-west1 (Belgium)</strong> region. Only the account owner has access — data is protected by Firestore security rules based on verified identity.</p>
       <p>Without sign-in, all data is stored only locally on your device and does not leave it.</p>
@@ -305,8 +306,9 @@
       <p>This text is <strong>not stored</strong> on our servers. Processing happens immediately and data is discarded after the response. Processing is subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
       <p>Import is an optional feature — the app works fully without it.</p>
 
-      <h3>6. Photos</h3>
-      <p>Photos added to recipes are stored locally on your device. If you are signed in with cloud backup active, photos are also uploaded to <strong>Firebase Storage</strong> for cross-device synchronisation. If you share a recipe on the Marketplace, its photos are publicly accessible to other app users.</p>
+      <h3>6. Photos and Videos</h3>
+      <p>Photos and videos added to recipes (e.g., instructional videos of the baking process) are stored locally on your device. If you are signed in with cloud backup active, photos and videos are also uploaded to <strong>Firebase Storage</strong> for cross-device synchronisation.</p>
+      <p>If you share a recipe on the Marketplace, its <strong>photos</strong> are publicly accessible to other app users. <strong>Videos are not shared on the Marketplace</strong> — they remain available only in your private recipe collection.</p>
 
       <h3>7. Payments and Subscriptions</h3>
       <p>The app offers optional paid features (Craftio PLUS and PRO) via subscription. Payments are processed through <strong>Google Play</strong> (Android), <strong>Apple App Store</strong> (iOS) and <strong>RevenueCat</strong>.</p>
@@ -360,7 +362,7 @@
       <ul>
         <li>Your user profile (name, email, nickname, profile photo, country code)</li>
         <li>All your recipes, baking schedules, pantry items, and ingredient prices stored in the cloud (Firestore)</li>
-        <li>Your recipe photos and profile photo (Firebase Storage)</li>
+        <li>Your recipe photos and videos and profile photo (Firebase Storage)</li>
         <li>Your achievements and rank progress</li>
         <li>Your saved recipes from the Marketplace and your ratings</li>
         <li>Recipes you shared on the Marketplace will be permanently hidden from public view</li>
