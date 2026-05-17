@@ -81,6 +81,12 @@
       margin: 32px 0 10px;
     }
     h3:first-of-type { margin-top: 0; }
+    h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #e8e8e8;
+      margin: 18px 0 8px;
+    }
     p { font-size: 14px; color: #bbb; margin-bottom: 12px; }
     p:last-child { margin-bottom: 0; }
     strong { color: #e8e8e8; }
@@ -104,6 +110,26 @@
       left: 0;
     }
     ul li strong { color: #e8e8e8; }
+    ol {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    ol li {
+      font-size: 14px;
+      color: #bbb;
+      padding: 6px 0 6px 28px;
+      position: relative;
+      counter-increment: step;
+    }
+    ol li::before {
+      content: counter(step) ".";
+      color: #D63B2F;
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+    }
     .badge {
       display: inline-block;
       background: #1a1a1a;
@@ -142,7 +168,7 @@
   <div class="lang-cs">
     <div class="section-block">
       <h2 class="pp-title">Zásady ochrany osobních údajů</h2>
-      <span class="badge">Poslední aktualizace: 11. května 2026 · Verze 1.7</span>
+      <span class="badge">Poslední aktualizace: 17. května 2026 · Verze 1.8</span>
 
       <h3>1. Kdo jsme</h3>
       <p>Aplikaci Craftio provozuje Jiří Hrdina, OSVČ. Kontakt: <a href="mailto:info@getcraftio.com">info@getcraftio.com</a></p>
@@ -217,6 +243,7 @@
         <li><strong>Google Sign-In</strong> / <strong>Apple Sign-In</strong> — volitelné přihlášení</li>
         <li><strong>Google Firebase (Firestore)</strong> — cloudová záloha dat a Tržiště (pouze pro přihlášené uživatele)</li>
         <li><strong>Firebase Storage</strong> — cloudové úložiště fotografií (pouze pro přihlášené uživatele)</li>
+        <li><strong>Firebase Cloud Functions</strong> — serverové zpracování smazání účtu (region europe-west1)</li>
         <li><strong>Google ML Kit</strong> — rozpoznávání textu z fotek (OCR), funguje offline na zařízení</li>
         <li><strong>Google Gemini API</strong> (přes proxy Vercel) — AI zpracování textu receptů (pouze při použití funkce importu)</li>
         <li><strong>RevenueCat</strong> — správa předplatného a ověření zakoupených funkcí</li>
@@ -230,13 +257,27 @@
       <p>Máte právo na přístup, opravu nebo výmaz svých osobních údajů. Lokální data smažete odinstalováním aplikace nebo vymazáním dat aplikace v nastavení zařízení. Cloudová data (Firestore, Firebase Storage, sdílené recepty na Tržišti) jsou svázána s vaším účtem — pro jejich kompletní výmaz postupujte podle pokynů v sekci níže nebo nás kontaktujte na e-mailu uvedeném v bodě 15.</p>
 
       <h3 id="smazani-uctu">13a. Smazání účtu Craftio</h3>
-      <p>Pokud si přejete smazat svůj účet v aplikaci <strong>Craftio</strong> a všechna související data, postupujte následovně:</p>
+      <p>Účet můžete smazat <strong>dvěma způsoby</strong>:</p>
+
+      <h4>A) Přímo v aplikaci (okamžité smazání) — doporučeno</h4>
+      <p>Od verze 2.2.1 je smazání účtu dostupné přímo v aplikaci:</p>
+      <ol>
+        <li>Otevřete aplikaci Craftio a přihlaste se</li>
+        <li>Přejděte do <strong>Nastavení</strong> → <strong>Profil</strong></li>
+        <li>Klepněte na <strong>Smazat účet</strong></li>
+        <li>Potvrďte akci v dialogovém okně</li>
+      </ol>
+      <p>Vaše data budou smazána během několika sekund prostřednictvím serverové funkce hostované na Firebase Cloud Functions (region europe-west1).</p>
+
+      <h4>B) E-mailem (do 30 dnů)</h4>
+      <p>Pokud nemáte přístup k aplikaci nebo preferujete e-mailové smazání:</p>
       <ul>
         <li><strong>Krok 1:</strong> Pošlete e-mail na <a href="mailto:info@getcraftio.com?subject=Smazání%20účtu">info@getcraftio.com</a> s předmětem <strong>„Smazání účtu"</strong>.</li>
         <li><strong>Krok 2:</strong> V těle e-mailu uveďte e-mailovou adresu, kterou jste použili při přihlášení (Google Sign-In nebo Apple Sign-In).</li>
         <li><strong>Krok 3:</strong> Vaši žádost zpracujeme nejpozději <strong>do 30 dnů</strong> a potvrdíme vám smazání e-mailem.</li>
       </ul>
-      <p><strong>Co bude smazáno:</strong></p>
+
+      <p><strong>Co bude smazáno (v obou případech):</strong></p>
       <ul>
         <li>Váš uživatelský profil (jméno, e-mail, přezdívka, profilová fotografie, kód země)</li>
         <li>Všechny vaše recepty, plány pečení, položky spíže a ceník surovin uložené v cloudu (Firestore)</li>
@@ -279,7 +320,7 @@
   <div class="lang-en">
     <div class="section-block">
       <h2 class="pp-title">Privacy Policy</h2>
-      <span class="badge">Last updated: May 11, 2026 · Version 1.7</span>
+      <span class="badge">Last updated: May 17, 2026 · Version 1.8</span>
 
       <h3>1. Who We Are</h3>
       <p>Craftio is operated by Jiří Hrdina, sole trader. Contact: <a href="mailto:info@getcraftio.com">info@getcraftio.com</a></p>
@@ -354,6 +395,7 @@
         <li><strong>Google Sign-In</strong> / <strong>Apple Sign-In</strong> — optional sign-in</li>
         <li><strong>Google Firebase (Firestore)</strong> — cloud data backup and Marketplace (signed-in users only)</li>
         <li><strong>Firebase Storage</strong> — cloud photo storage (signed-in users only)</li>
+        <li><strong>Firebase Cloud Functions</strong> — server-side account deletion processing (europe-west1 region)</li>
         <li><strong>Google ML Kit</strong> — on-device text recognition from photos (OCR), works offline</li>
         <li><strong>Google Gemini API</strong> (via Vercel proxy) — AI processing of recipe text (only when using the import feature)</li>
         <li><strong>RevenueCat</strong> — subscription management and purchased feature verification</li>
@@ -367,13 +409,27 @@
       <p>You have the right to access, correct, or delete your personal data. Local data can be deleted by uninstalling the app or clearing app data in your device settings. Cloud data (Firestore, Firebase Storage, shared recipes on Marketplace) is linked to your account — to request complete deletion, follow the instructions in the section below or contact us at the email listed in section 15.</p>
 
       <h3 id="account-deletion">13a. Craftio Account Deletion</h3>
-      <p>If you wish to delete your <strong>Craftio</strong> account and all associated data, please follow these steps:</p>
+      <p>You can delete your account in <strong>two ways</strong>:</p>
+
+      <h4>A) Directly in the app (instant deletion) — recommended</h4>
+      <p>Starting with version 2.2.1, account deletion is available directly in the app:</p>
+      <ol>
+        <li>Open the Craftio app and sign in</li>
+        <li>Go to <strong>Settings</strong> → <strong>Profile</strong></li>
+        <li>Tap <strong>Delete Account</strong></li>
+        <li>Confirm the action in the dialog</li>
+      </ol>
+      <p>Your data will be deleted within seconds via a server-side function hosted on Firebase Cloud Functions (europe-west1 region).</p>
+
+      <h4>B) By email (within 30 days)</h4>
+      <p>If you don't have access to the app or prefer email-based deletion:</p>
       <ul>
         <li><strong>Step 1:</strong> Send an email to <a href="mailto:info@getcraftio.com?subject=Account%20Deletion">info@getcraftio.com</a> with the subject line <strong>"Account Deletion"</strong>.</li>
         <li><strong>Step 2:</strong> In the email body, include the email address you used to sign in (Google Sign-In or Apple Sign-In).</li>
         <li><strong>Step 3:</strong> We will process your request within <strong>30 days</strong> and confirm the deletion by email.</li>
       </ul>
-      <p><strong>What will be deleted:</strong></p>
+
+      <p><strong>What will be deleted (in both cases):</strong></p>
       <ul>
         <li>Your user profile (name, email, nickname, profile photo, country code)</li>
         <li>All your recipes, baking schedules, pantry items, and ingredient prices stored in the cloud (Firestore)</li>
